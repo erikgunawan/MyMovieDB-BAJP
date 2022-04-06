@@ -3,22 +3,20 @@ package id.ergun.mymoviedb.ui.view.home
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.ui.NavigationUI.setupWithNavController
 import dagger.hilt.android.AndroidEntryPoint
 import id.ergun.mymoviedb.R
 import id.ergun.mymoviedb.databinding.HomeActivityBinding
-import id.ergun.mymoviedb.ui.view.favorite.FavoriteFragment
-import id.ergun.mymoviedb.ui.view.movie.MovieFragment
-import id.ergun.mymoviedb.ui.view.tvshow.TvShowFragment
+
 
 /**
  * Created by alfacart on 21/10/20.
  */
 @AndroidEntryPoint
-class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
+class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: HomeActivityBinding
 
@@ -42,9 +40,13 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             elevation = 0F
         }
 
-        loadFragment(MovieFragment())
+//        loadFragment(MovieFragment())
 
-        binding.bnvMain.setOnNavigationItemSelectedListener(this)
+        val navController = findNavController(this, R.id.activity_main_nav_host_fragment)
+//        val bottomNavigationView =
+//            findViewById<BottomNavigationView>(R.id.bnv_main)
+        setupWithNavController(binding.bnvMain, navController)
+//        binding.bnvMain.setOnNavigationItemSelectedListener(this)
     }
 
 
@@ -58,16 +60,16 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         return false
     }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        var fragment: Fragment? = null
-
-        if  (binding.bnvMain.selectedItemId == item.itemId) return false
-
-        when (item.itemId) {
-            R.id.action_movies -> fragment = MovieFragment.newInstance()
-            R.id.action_tv_shows -> fragment = TvShowFragment.newInstance()
-            R.id.action_favorites -> fragment = FavoriteFragment.newInstance()
-        }
-        return loadFragment(fragment)
-    }
+//    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+//        var fragment: Fragment? = null
+//
+//        if  (binding.bnvMain.selectedItemId == item.itemId) return false
+//
+//        when (item.itemId) {
+//            R.id.action_movies -> fragment = MovieFragment.newInstance()
+//            R.id.action_tv_shows -> fragment = TvShowFragment.newInstance()
+//            R.id.action_favorites -> fragment = FavoriteFragment.newInstance()
+//        }
+//        return loadFragment(fragment)
+//    }
 }
