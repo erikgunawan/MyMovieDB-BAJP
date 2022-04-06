@@ -1,8 +1,8 @@
 package id.ergun.mymoviedb.ui.viewmodel.movie
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import androidx.paging.PagedList
+import dagger.hilt.android.lifecycle.HiltViewModel
 import id.ergun.mymoviedb.domain.model.Movie
 import id.ergun.mymoviedb.domain.usecase.movie.MovieUseCase
 import id.ergun.mymoviedb.ui.datasource.movie.MovieDataSourceFactory
@@ -10,11 +10,13 @@ import id.ergun.mymoviedb.ui.datasource.movie.MovieKeyedDataSource
 import id.ergun.mymoviedb.ui.view.favorite.FavoriteModel
 import id.ergun.mymoviedb.ui.view.movie.MovieVR
 import id.ergun.mymoviedb.util.Resource
+import javax.inject.Inject
 
 /**
  * Created by alfacart on 21/10/20.
  */
-class MovieViewModel @ViewModelInject constructor(
+@HiltViewModel
+class MovieViewModel @Inject constructor(
     private val useCase: MovieUseCase,
     private val dataSourceFactory: MovieDataSourceFactory
 ) : ViewModel() {

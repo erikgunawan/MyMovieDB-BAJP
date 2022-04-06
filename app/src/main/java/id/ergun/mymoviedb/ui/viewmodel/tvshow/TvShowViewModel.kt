@@ -1,18 +1,20 @@
 package id.ergun.mymoviedb.ui.viewmodel.tvshow
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
+import dagger.hilt.android.lifecycle.HiltViewModel
 import id.ergun.mymoviedb.domain.model.TvShow
 import id.ergun.mymoviedb.domain.usecase.tvshow.TvShowUseCase
 import id.ergun.mymoviedb.ui.datasource.tvshow.TvShowDataSourceFactory
 import id.ergun.mymoviedb.ui.datasource.tvshow.TvShowKeyedDataSource
 import id.ergun.mymoviedb.ui.view.favorite.FavoriteModel
 import id.ergun.mymoviedb.util.Resource
+import javax.inject.Inject
 
 /**
  * Created by alfacart on 21/10/20.
  */
-class TvShowViewModel @ViewModelInject constructor(
+@HiltViewModel
+class TvShowViewModel @Inject constructor(
     private val useCase: TvShowUseCase,
     private val dataSourceFactory: TvShowDataSourceFactory
 ) : ViewModel() {

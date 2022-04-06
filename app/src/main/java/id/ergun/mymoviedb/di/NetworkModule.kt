@@ -7,8 +7,8 @@ import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
 import id.ergun.mymoviedb.BuildConfig.BASE_URL
 import id.ergun.mymoviedb.data.remote.ApiService
 import okhttp3.OkHttpClient
@@ -20,7 +20,7 @@ import javax.inject.Singleton
  * Created by alfacart on 20/11/20.
  */
 @Module
-@InstallIn(ApplicationComponent::class)
+@InstallIn(SingletonComponent::class)
 object NetworkModule {
 
     @Provides
