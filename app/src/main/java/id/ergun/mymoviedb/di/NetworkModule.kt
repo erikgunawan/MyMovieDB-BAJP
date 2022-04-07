@@ -1,6 +1,7 @@
 package id.ergun.mymoviedb.di
 
 import android.content.Context
+import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -35,7 +36,13 @@ object NetworkModule {
     @Singleton
     fun provideOkHttp(@ApplicationContext context: Context): OkHttpClient {
         val okBuilder = OkHttpClient.Builder()
-        okBuilder.addInterceptor(ChuckerInterceptor(context))
+        okBuilder.addInterceptor(
+            ChuckerInterceptor.Builder(context)
+                .collector(ChuckerCollector(context))
+                .maxContentLength(250000L)
+                .redactHeaders(emptySet())
+                .alwaysReadResponseBody(true)
+                .build())
         return okBuilder.build()
     }
 
