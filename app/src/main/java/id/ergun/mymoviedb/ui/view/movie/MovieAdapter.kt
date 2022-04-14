@@ -56,9 +56,9 @@ class MovieAdapter : PagedListAdapter<MovieVR, MovieAdapter.MovieViewHolder>(DIF
                     val bundle = Bundle()
                     bundle.putParcelable(Movie.EXTRA_MOVIE, MovieVR.toModel(movie))
                     val actionId = if (favorite)
-                        R.id.action_favoriteFragment_to_movieDetailActivity
+                        R.id.action_favoriteFragment_to_movieDetailFragment
                     else
-                        R.id.action_movieFragment_to_movieDetailActivity
+                        R.id.action_movieFragment_to_movieDetailFragment
 
                     Navigation.findNavController(it).navigate(actionId, bundle)
                 }

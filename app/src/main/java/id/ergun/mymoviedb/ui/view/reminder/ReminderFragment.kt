@@ -35,7 +35,10 @@ class ReminderFragment : Fragment() {
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
-        val item = menu.findItem(R.id.reminderFragment)
-        item?.isVisible = false
+        val actionReminder = menu.findItem(R.id.reminderFragment)
+        actionReminder?.isVisible = false
+
+        val actionShare = menu.findItem(R.id.action_share)
+        actionShare?.isVisible = false
     }
 }

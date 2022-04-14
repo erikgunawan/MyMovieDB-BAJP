@@ -2,13 +2,14 @@ package id.ergun.mymoviedb.ui.view.tvshow
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
+import id.ergun.mymoviedb.R
 import id.ergun.mymoviedb.databinding.TvShowFragmentBinding
 import id.ergun.mymoviedb.ui.viewmodel.tvshow.TvShowViewModel
 import id.ergun.mymoviedb.util.Const
@@ -56,6 +57,7 @@ class TvShowFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
         initEventBus()
         loadArgument()
         initView()
@@ -134,6 +136,11 @@ class TvShowFragment : Fragment() {
         binding.progressBar.gone()
 
         binding.viewWarning.tvWarning.text = message
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        val actionShare = menu.findItem(R.id.action_share)
+        actionShare?.isVisible = false
     }
 
     @Subscribe

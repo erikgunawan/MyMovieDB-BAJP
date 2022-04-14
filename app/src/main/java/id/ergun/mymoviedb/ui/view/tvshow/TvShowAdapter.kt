@@ -56,9 +56,9 @@ class TvShowAdapter : PagedListAdapter<TvShowVR, TvShowAdapter.TvShowViewHolder>
                     bundle.putParcelable(TvShow.EXTRA_TV_SHOW, TvShowVR.toModel(tvShow))
 
                     val actionId = if (favorite)
-                        R.id.action_favoriteFragment_to_tvShowDetailActivity
+                        R.id.action_favoriteFragment_to_tvShowDetailFragment
                     else
-                        R.id.action_tvShowFragment_to_tvShowDetailActivity
+                        R.id.action_tvShowFragment_to_tvShowDetailFragment
 
                     Navigation.findNavController(it).navigate(actionId, bundle)
                 }

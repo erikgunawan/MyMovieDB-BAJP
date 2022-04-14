@@ -8,4 +8,11 @@
         app:iconTint="#FFFFFF"
         android:icon="@drawable/ic_reminder" />
 
+    <item
+        android:id="@+id/action_share"
+        android:title="@string/share"
+        app:showAsAction="ifRoom"
+        app:iconTint="#FFFFFF"
+        android:icon="@drawable/ic_share" />
+
 </menu>

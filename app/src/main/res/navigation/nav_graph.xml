@@ -11,8 +11,8 @@
         android:label="MovieFragment"
         tools:layout="@layout/movie_fragment" >
         <action
-            android:id="@+id/action_movieFragment_to_movieDetailActivity"
-            app:destination="@id/movieDetailActivity" />
+            android:id="@+id/action_movieFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/tvShowFragment"
@@ -20,8 +20,8 @@
         android:label="TvShowFragment"
         tools:layout="@layout/tv_show_fragment" >
         <action
-            android:id="@+id/action_tvShowFragment_to_tvShowDetailActivity"
-            app:destination="@id/tvShowDetailActivity" />
+            android:id="@+id/action_tvShowFragment_to_tvShowDetailFragment"
+            app:destination="@id/tvShowDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
@@ -29,24 +29,25 @@
         android:label="FavoriteFragment"
         tools:layout="@layout/favorite_fragment" >
         <action
-            android:id="@+id/action_favoriteFragment_to_movieDetailActivity"
-            app:destination="@id/movieDetailActivity" />
+            android:id="@+id/action_favoriteFragment_to_tvShowDetailFragment"
+            app:destination="@id/tvShowDetailFragment" />
         <action
-            android:id="@+id/action_favoriteFragment_to_tvShowDetailActivity"
-            app:destination="@id/tvShowDetailActivity" />
+            android:id="@+id/action_favoriteFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
     </fragment>
-    <activity
-        android:id="@+id/movieDetailActivity"
-        android:name="id.ergun.mymoviedb.ui.view.movie.detail.MovieDetailActivity"
-        android:label="MovieDetailActivity"
-        tools:layout="@layout/movie_detail_activity"/>
-    <activity
-        android:id="@+id/tvShowDetailActivity"
-        android:name="id.ergun.mymoviedb.ui.view.tvshow.detail.TvShowDetailActivity"
-        android:label="TvShowDetailActivity"
-        tools:layout="@layout/tv_show_detail_activity"/>
     <fragment
         android:id="@+id/reminderFragment"
         android:name="id.ergun.mymoviedb.ui.view.reminder.ReminderFragment"
-        android:label="ReminderFragment" />
+        android:label="ReminderFragment"
+        tools:layout="@layout/reminder_fragment"/>
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="id.ergun.mymoviedb.ui.view.movie.detail.MovieDetailFragment"
+        android:label="MovieDetailFragment"
+        tools:layout="@layout/movie_detail_fragment"/>
+    <fragment
+        android:id="@+id/tvShowDetailFragment"
+        android:name="id.ergun.mymoviedb.ui.view.tvshow.detail.TvShowDetailFragment"
+        android:label="TvShowDetailFragment"
+        tools:layout="@layout/tv_show_detail_fragment"/>
 </navigation>
