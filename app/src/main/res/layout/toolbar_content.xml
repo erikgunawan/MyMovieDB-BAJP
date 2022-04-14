@@ -10,28 +10,28 @@
     android:background="#000000"
     >
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:titleTextColor="#ffffff"
-        android:gravity="center"
-        >
+        android:layout_height="?actionBarSize">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:src="@drawable/img_app_name"
-            android:layout_centerInParent="true"
-            android:adjustViewBounds="true"
-            android:paddingVertical="12dp"
-            tools:ignore="ContentDescription" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:adjustViewBounds="true"
+                android:paddingVertical="12dp"
+                android:src="@drawable/img_app_name"
+                tools:ignore="ContentDescription" />
         </RelativeLayout>
-
-    </androidx.appcompat.widget.Toolbar>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:titleTextColor="#ffffff"/>
+    </FrameLayout>
 </com.google.android.material.appbar.AppBarLayout>

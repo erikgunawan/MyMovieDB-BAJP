@@ -17,5 +17,10 @@
 
   <string name="message_add_to_favorite">Added to Favorite</string>
   <string name="message_remove_from_favorite">Removed from Favorite</string>
-    <string name="message_data_not_found">Data tidak ditemukan</string>
+  <string name="message_data_not_found">Data tidak ditemukan</string>
+
+  <string name="reminder">Reminder</string>
+
+  <string name="reminder.daily.label">Daily Reminder</string>
+  <string name="reminder.daily.desc">Reminder will be active at 08.00 AM</string>
 </resources>

@@ -45,4 +45,8 @@
         android:name="id.ergun.mymoviedb.ui.view.tvshow.detail.TvShowDetailActivity"
         android:label="TvShowDetailActivity"
         tools:layout="@layout/tv_show_detail_activity"/>
+    <fragment
+        android:id="@+id/reminderFragment"
+        android:name="id.ergun.mymoviedb.ui.view.reminder.ReminderFragment"
+        android:label="ReminderFragment" />
 </navigation>

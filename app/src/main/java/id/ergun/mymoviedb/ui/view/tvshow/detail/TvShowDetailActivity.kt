@@ -42,6 +42,7 @@ class TvShowDetailActivity : AppCompatActivity() {
         supportActionBar?.run {
             setDisplayShowHomeEnabled(true)
             setDisplayHomeAsUpEnabled(true)
+            setDisplayShowTitleEnabled(false)
         }
 
         loadIntents()
