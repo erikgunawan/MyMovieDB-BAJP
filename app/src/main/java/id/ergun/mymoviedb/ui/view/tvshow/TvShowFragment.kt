@@ -43,6 +43,8 @@ class TvShowFragment : Fragment() {
 
     private lateinit var tvShowAdapter: TvShowAdapter
 
+    private var favoriteState: Boolean = false
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -67,12 +69,13 @@ class TvShowFragment : Fragment() {
 
     private fun loadArgument() {
         if (arguments == null) return
-
-        tvShowViewModel.setFavorite(arguments?.getBoolean(ARGUMENT_FAVORITE, false) ?: false)
+        favoriteState = arguments?.getBoolean(ARGUMENT_FAVORITE, false) ?: false
+        tvShowViewModel.setFavorite(favoriteState)
     }
 
     private fun initView() {
         tvShowAdapter = TvShowAdapter()
+        tvShowAdapter.favorite = favoriteState
 
         with(binding.rvTvShow) {
             layoutManager = LinearLayoutManager(context)
@@ -90,7 +93,6 @@ class TvShowFragment : Fragment() {
     private fun getTvShows() {
         tvShowViewModel.getTvShows().observe(requireActivity()) {
             tvShowAdapter.submitList(it)
-            tvShowAdapter.notifyDataSetChanged()
         }
 
         tvShowViewModel.tvShowState.observe(requireActivity()) {

@@ -17,6 +17,8 @@ class Movie(
 ): Parcelable {
 
     companion object {
+        const val EXTRA_MOVIE = "EXTRA_MOVIE"
+
         fun transform(movieDB: MovieDB): ArrayList<Movie> {
             val list = arrayListOf<Movie>()
             movieDB.getMovies().forEach {

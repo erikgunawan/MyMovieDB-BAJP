@@ -43,6 +43,8 @@ class MovieFragment : Fragment() {
 
     private lateinit var movieAdapter: MovieAdapter
 
+    private var favoriteState: Boolean = false
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -67,12 +69,13 @@ class MovieFragment : Fragment() {
 
     private fun loadArgument() {
         if (arguments == null) return
-
-        movieViewModel.setFavorite(arguments?.getBoolean(ARGUMENT_FAVORITE, false) ?: false)
+        favoriteState = arguments?.getBoolean(ARGUMENT_FAVORITE, false) ?: false
+        movieViewModel.setFavorite(favoriteState)
     }
 
     private fun initView() {
         movieAdapter = MovieAdapter()
+        movieAdapter.favorite = favoriteState
 
         with(binding.rvMovie) {
             layoutManager = LinearLayoutManager(context)
@@ -90,7 +93,6 @@ class MovieFragment : Fragment() {
     private fun getMovies() {
         movieViewModel.getMovies().observe(requireActivity()) {
             movieAdapter.submitList(it)
-            movieAdapter.notifyDataSetChanged()
         }
 
         movieViewModel.movieState.observe(requireActivity()) {

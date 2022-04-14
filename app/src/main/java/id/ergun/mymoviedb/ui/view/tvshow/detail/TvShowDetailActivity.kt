@@ -1,7 +1,5 @@
 package id.ergun.mymoviedb.ui.view.tvshow.detail
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -14,6 +12,7 @@ import id.ergun.mymoviedb.BuildConfig
 import id.ergun.mymoviedb.R
 import id.ergun.mymoviedb.databinding.TvShowDetailActivityBinding
 import id.ergun.mymoviedb.domain.model.TvShow
+import id.ergun.mymoviedb.domain.model.TvShow.Companion.EXTRA_TV_SHOW
 import id.ergun.mymoviedb.ui.view.favorite.FavoriteModel
 import id.ergun.mymoviedb.ui.viewmodel.tvshow.TvShowViewModel
 import id.ergun.mymoviedb.util.Const
@@ -32,17 +31,6 @@ class TvShowDetailActivity : AppCompatActivity() {
     private lateinit var binding: TvShowDetailActivityBinding
 
     private val viewModel by viewModels<TvShowViewModel>()
-
-    companion object {
-        const val EXTRA_TV_SHOW = "EXTRA_TV_SHOW"
-        fun newIntent(
-            context: Context, tvShow: TvShow
-        ): Intent {
-            val intent = Intent(context, TvShowDetailActivity::class.java)
-            intent.putExtra(EXTRA_TV_SHOW, tvShow)
-            return intent
-        }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

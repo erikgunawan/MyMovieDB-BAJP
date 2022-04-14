@@ -9,15 +9,40 @@
         android:id="@+id/movieFragment"
         android:name="id.ergun.mymoviedb.ui.view.movie.MovieFragment"
         android:label="MovieFragment"
-        tools:layout="@layout/movie_fragment" />
+        tools:layout="@layout/movie_fragment" >
+        <action
+            android:id="@+id/action_movieFragment_to_movieDetailActivity"
+            app:destination="@id/movieDetailActivity" />
+    </fragment>
     <fragment
         android:id="@+id/tvShowFragment"
         android:name="id.ergun.mymoviedb.ui.view.tvshow.TvShowFragment"
         android:label="TvShowFragment"
-        tools:layout="@layout/tv_show_fragment" />
+        tools:layout="@layout/tv_show_fragment" >
+        <action
+            android:id="@+id/action_tvShowFragment_to_tvShowDetailActivity"
+            app:destination="@id/tvShowDetailActivity" />
+    </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="id.ergun.mymoviedb.ui.view.favorite.FavoriteFragment"
         android:label="FavoriteFragment"
-        tools:layout="@layout/favorite_fragment" />
+        tools:layout="@layout/favorite_fragment" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_movieDetailActivity"
+            app:destination="@id/movieDetailActivity" />
+        <action
+            android:id="@+id/action_favoriteFragment_to_tvShowDetailActivity"
+            app:destination="@id/tvShowDetailActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/movieDetailActivity"
+        android:name="id.ergun.mymoviedb.ui.view.movie.detail.MovieDetailActivity"
+        android:label="MovieDetailActivity"
+        tools:layout="@layout/movie_detail_activity"/>
+    <activity
+        android:id="@+id/tvShowDetailActivity"
+        android:name="id.ergun.mymoviedb.ui.view.tvshow.detail.TvShowDetailActivity"
+        android:label="TvShowDetailActivity"
+        tools:layout="@layout/tv_show_detail_activity"/>
 </navigation>

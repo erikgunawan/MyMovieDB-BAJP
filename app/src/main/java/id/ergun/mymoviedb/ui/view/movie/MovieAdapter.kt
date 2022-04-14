@@ -1,19 +1,24 @@
 package id.ergun.mymoviedb.ui.view.movie
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import id.ergun.mymoviedb.BuildConfig
+import id.ergun.mymoviedb.R
 import id.ergun.mymoviedb.databinding.MovieItemsBinding
-import id.ergun.mymoviedb.ui.view.movie.detail.MovieDetailActivity
+import id.ergun.mymoviedb.domain.model.Movie
 import id.ergun.mymoviedb.util.loadImage
 
 /**
  * Created by alfacart on 21/10/20.
  */
 class MovieAdapter : PagedListAdapter<MovieVR, MovieAdapter.MovieViewHolder>(DIFF_CALLBACK) {
+
+    var favorite: Boolean = false
 
     companion object {
         private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<MovieVR>() {
@@ -48,8 +53,14 @@ class MovieAdapter : PagedListAdapter<MovieVR, MovieAdapter.MovieViewHolder>(DIF
                 binding.viewRating.tvRating.text = movie.voteAverage.toString()
                 binding.tvTagLine.text = movie.tagLine
                 setOnClickListener {
-                    val intent = MovieDetailActivity.newIntent(context, MovieVR.toModel(movie))
-                    context.startActivity(intent)
+                    val bundle = Bundle()
+                    bundle.putParcelable(Movie.EXTRA_MOVIE, MovieVR.toModel(movie))
+                    val actionId = if (favorite)
+                        R.id.action_favoriteFragment_to_movieDetailActivity
+                    else
+                        R.id.action_movieFragment_to_movieDetailActivity
+
+                    Navigation.findNavController(it).navigate(actionId, bundle)
                 }
                 binding.ivPoster.loadImage(BuildConfig.IMAGE_URL + movie.posterPath)
             }

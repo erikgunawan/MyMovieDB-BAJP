@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/favorite_fragment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/home_activity.xml" value="0.1" />
         <entry key="app/src/main/res/layout/main_activity.xml" value="0.1" />
         <entry key="app/src/main/res/layout/movie_detail_activity.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/rating_view.xml" value="0.1" />
         <entry key="app/src/main/res/menu/bnv_menu_main.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/menu/menu_share.xml" value="0.17685185185185184" />
       </map>

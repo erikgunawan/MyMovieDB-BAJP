@@ -18,6 +18,8 @@ class TvShow(
 ): Parcelable {
 
     companion object {
+        const val EXTRA_TV_SHOW = "EXTRA_TV_SHOW"
+
         fun transform(tvShowDB: TvShowDB): ArrayList<TvShow> {
             val list = arrayListOf<TvShow>()
             tvShowDB.getTvShows().forEach {
