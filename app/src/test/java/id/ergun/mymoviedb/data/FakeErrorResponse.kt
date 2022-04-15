@@ -11,7 +11,7 @@ object FakeErrorResponse {
         return Resource(
             data = null,
             status = Resource.Status.ERROR,
-            message = "Terjadi kesalahan"
+            message = "Something when wrong"
         )
     }
 }

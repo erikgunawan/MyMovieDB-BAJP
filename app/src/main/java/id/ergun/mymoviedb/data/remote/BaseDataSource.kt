@@ -19,7 +19,7 @@ fun <T, R> Response<T>.getResult(transform: (T) -> (R)): Resource<R> {
             }
         }
 
-        return error("Terjadi kesalahan")
+        return error("Something when wrong")
     } catch (e: Exception) {
         return error(e.message ?: e.toString())
     }

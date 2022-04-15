@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/reminder.daily.label"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/switch_daily" />
@@ -20,6 +20,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/reminder.daily.desc"
+        android:textColor="@color/grey"
         app:layout_constraintTop_toBottomOf="@id/tv_daily_label"
         app:layout_constraintStart_toStartOf="@id/tv_daily_label"
         app:layout_constraintEnd_toEndOf="@id/tv_daily_label" />

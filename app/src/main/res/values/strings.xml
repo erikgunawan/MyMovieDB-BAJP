@@ -10,14 +10,14 @@
   <string name="home">Home</string>
   <string name="favorite">Favorites</string>
 
-  <string name="share">Bagikan</string>
-  <string name="share_tv_show_title">Bagikan TV Show ini</string>
-  <string name="share_movie_title">Bagikan Movie ini</string>
-  <string name="btn_try_again">Coba Lagi</string>
+  <string name="share">Share</string>
+  <string name="share_tv_show_title">Share this TV Show</string>
+  <string name="share_movie_title">Share this Movie</string>
+  <string name="btn_try_again">Try Again</string>
 
   <string name="message_add_to_favorite">Added to Favorite</string>
   <string name="message_remove_from_favorite">Removed from Favorite</string>
-  <string name="message_data_not_found">Data tidak ditemukan</string>
+  <string name="message_data_not_found">Data not found</string>
 
   <string name="reminder">Reminder</string>
 

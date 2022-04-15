@@ -24,7 +24,7 @@ class TvShowRepositoryImpl @Inject constructor(private val remoteData: ApiServic
             }
         }
         catch (exception: Exception) {
-            Resource.error("Terjadi kesalahan")
+            Resource.error("Something when wrong")
         }
     }
     override suspend fun getTvShowDetail(id: Int): Resource<TvShow> {
@@ -41,7 +41,7 @@ class TvShowRepositoryImpl @Inject constructor(private val remoteData: ApiServic
         }
         catch (exception: Exception) {
             Timber.e(exception.toString())
-            Resource.error("Terjadi kesalahan")
+            Resource.error("Something when wrong")
         }
     }
 

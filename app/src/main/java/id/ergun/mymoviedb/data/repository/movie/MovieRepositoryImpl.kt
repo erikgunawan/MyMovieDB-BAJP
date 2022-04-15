@@ -10,7 +10,6 @@ import id.ergun.mymoviedb.domain.model.Movie
 import id.ergun.mymoviedb.util.Resource
 import id.ergun.mymoviedb.util.testing.EspressoIdlingResource
 import timber.log.Timber
-import java.util.*
 import javax.inject.Inject
 
 /**
@@ -25,7 +24,7 @@ class MovieRepositoryImpl @Inject constructor(private val remoteData: ApiService
             }
         }
         catch (exception: Exception) {
-            Resource.error("Terjadi kesalahan")
+            Resource.error("Something when wrong")
         }
     }
 
@@ -43,7 +42,7 @@ class MovieRepositoryImpl @Inject constructor(private val remoteData: ApiService
         }
         catch (exception: Exception) {
             Timber.e(exception.toString())
-            Resource.error("Terjadi kesalahan")
+            Resource.error("Something when wrong")
         }
     }
 

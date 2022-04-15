@@ -45,7 +45,7 @@ class MovieKeyedDataSource(
                 }
                 catch (exception: Exception) {
                     Timber.e(exception)
-                    state.postValue(Resource.error("Terjadi kesalahan", data = null))
+                    state.postValue(Resource.error("Something when wrong", data = null))
                 }
             }
             return
@@ -63,7 +63,7 @@ class MovieKeyedDataSource(
             }
             catch (exception: Exception) {
                 Timber.e(exception)
-                state.postValue(Resource.error("Terjadi kesalahan", data = null))
+                state.postValue(Resource.error("Something when wrong", data = null))
             }
         }
     }
