@@ -6,6 +6,8 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import id.ergun.mymoviedb.data.repository.movie.MovieRepository
 import id.ergun.mymoviedb.data.repository.movie.MovieRepositoryImpl
+import id.ergun.mymoviedb.data.repository.reminder.ReminderRepository
+import id.ergun.mymoviedb.data.repository.reminder.ReminderRepositoryImpl
 import id.ergun.mymoviedb.data.repository.tvshow.TvShowRepository
 import id.ergun.mymoviedb.data.repository.tvshow.TvShowRepositoryImpl
 
@@ -19,4 +21,6 @@ abstract class RepositoryModule {
     abstract fun bindMovieRepository(impl: MovieRepositoryImpl): MovieRepository
     @Binds
     abstract fun bindTvShowRepository(impl: TvShowRepositoryImpl): TvShowRepository
+    @Binds
+    abstract fun bindReminderRepository(impl: ReminderRepositoryImpl): ReminderRepository
 }

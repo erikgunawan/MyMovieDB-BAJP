@@ -8,11 +8,11 @@ import javax.inject.Inject
  */
 class ReminderRepositoryImpl @Inject constructor(private val data: ReminderCache) :
     ReminderRepository {
-    override suspend fun setDailyReminder(active: Boolean) {
+    override fun setDailyReminder(active: Boolean) {
         data.setDailyReminder(active)
     }
 
-    override suspend fun isActiveDailyReminder(): Boolean {
+    override fun isActiveDailyReminder(): Boolean {
         return data.isActiveDailyReminder()
     }
 }

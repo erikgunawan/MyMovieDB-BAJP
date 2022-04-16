@@ -52,7 +52,7 @@ class MovieRepositoryImpl @Inject constructor(private val remoteData: ApiService
         return if (movie != null) {
             Resource.success(MovieLocal.mapToDomainModel(movie))
         } else {
-            Resource.error("Data tidak ditemukan")
+            Resource.error("Data not found")
         }
     }
 

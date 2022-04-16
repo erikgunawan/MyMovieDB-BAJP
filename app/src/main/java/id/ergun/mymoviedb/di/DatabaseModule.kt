@@ -7,6 +7,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import id.ergun.mymoviedb.data.local.cache.ReminderCache
 import id.ergun.mymoviedb.data.local.room.AppDatabase
 import javax.inject.Singleton
 
@@ -34,4 +35,8 @@ object DatabaseModule {
     @Provides
     @Singleton
     fun getTvShowDao(appDatabase: AppDatabase) = appDatabase.tvShowDao()
+
+    @Provides
+    @Singleton
+    fun getReminderCache(@ApplicationContext context: Context) = ReminderCache(context)
 }

@@ -22,5 +22,5 @@
   <string name="reminder">Reminder</string>
 
   <string name="reminder.daily.label">Daily Reminder</string>
-  <string name="reminder.daily.desc">Reminder will be active at 08.00 AM</string>
+  <string name="reminder.daily.desc">Reminder will be active after 24 hours from now</string>
 </resources>

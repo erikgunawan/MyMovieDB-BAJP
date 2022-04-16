@@ -6,6 +6,8 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import id.ergun.mymoviedb.domain.usecase.movie.MovieUseCase
 import id.ergun.mymoviedb.domain.usecase.movie.MovieUseCaseImpl
+import id.ergun.mymoviedb.domain.usecase.reminder.ReminderUseCase
+import id.ergun.mymoviedb.domain.usecase.reminder.ReminderUseCaseImpl
 import id.ergun.mymoviedb.domain.usecase.tvshow.TvShowUseCase
 import id.ergun.mymoviedb.domain.usecase.tvshow.TvShowUseCaseImpl
 
@@ -19,4 +21,6 @@ abstract class UseCaseModule {
     abstract fun bindMovieUseCase(impl: MovieUseCaseImpl): MovieUseCase
     @Binds
     abstract fun bindTvShowUseCase(impl: TvShowUseCaseImpl): TvShowUseCase
+    @Binds
+    abstract fun bindReminderUseCase(impl: ReminderUseCaseImpl): ReminderUseCase
 }

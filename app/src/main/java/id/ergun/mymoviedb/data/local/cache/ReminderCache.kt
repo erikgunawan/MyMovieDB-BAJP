@@ -2,11 +2,12 @@ package id.ergun.mymoviedb.data.local.cache
 
 import android.content.Context
 import android.content.SharedPreferences
+import javax.inject.Inject
 
 /**
  * Created by alfacart on 15/04/22.
  */
-class ReminderCache(context: Context) {
+class ReminderCache @Inject constructor(context: Context) {
 
     private val preferences: SharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
 

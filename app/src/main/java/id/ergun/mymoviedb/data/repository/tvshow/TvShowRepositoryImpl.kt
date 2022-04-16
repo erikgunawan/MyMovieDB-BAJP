@@ -51,7 +51,7 @@ class TvShowRepositoryImpl @Inject constructor(private val remoteData: ApiServic
         return if (tvShow != null) {
             Resource.success(TvShowLocal.mapToDomainModel(tvShow))
         } else {
-            Resource.error("Data tidak ditemukan")
+            Resource.error("Data not found")
         }
     }
 

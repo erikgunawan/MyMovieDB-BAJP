@@ -1,9 +1,7 @@
 package id.ergun.mymoviedb.ui.viewmodel.reminder
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.liveData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import id.ergun.mymoviedb.domain.usecase.reminder.ReminderUseCase
 import javax.inject.Inject
@@ -19,11 +17,13 @@ class ReminderViewModel @Inject constructor(
     var isActiveDailyReminder: MutableLiveData<Boolean> = MutableLiveData()
     var isActiveDailyReminderChanged: Boolean = false
 
-    fun getDailyReminder(): LiveData<Boolean> {
-        return liveData { emit(useCase.isActiveDailyReminder()) }
+    fun getDailyReminder() {
+        isActiveDailyReminder.value = useCase.isActiveDailyReminder()
     }
 
     fun setDailyReminder(active: Boolean) {
-        liveData { emit(useCase.setDailyReminder(active)) }
+        useCase.setDailyReminder(active)
+        isActiveDailyReminderChanged = true
+        isActiveDailyReminder.value = active
     }
 }

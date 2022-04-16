@@ -41,7 +41,7 @@ class MovieKeyedDataSource(
                         return@launch
                     }
 
-                    state.postValue(Resource.emptyData("Data tidak ditemukan", null))
+                    state.postValue(Resource.emptyData("Data not found", null))
                 }
                 catch (exception: Exception) {
                     Timber.e(exception)
